@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://nyacchan.qzz.io/manifest.json</loc>
+    
+    <lastmod>2026-10-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://nyacchan.qzz.io/tags/index.html</loc>
     
     <lastmod>2026-10-27</lastmod>
@@ -20,25 +29,7 @@
   </url>
   
   <url>
-    <loc>https://nyacchan.qzz.io/social/fcircle/index.html</loc>
-    
-    <lastmod>2026-10-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://nyacchan.qzz.io/social/link/index.html</loc>
-    
-    <lastmod>2026-10-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://nyacchan.qzz.io/manifest.json</loc>
+    <loc>https://nyacchan.qzz.io/life/music/index.html</loc>
     
     <lastmod>2026-10-27</lastmod>
     
@@ -65,7 +56,16 @@
   </url>
   
   <url>
-    <loc>https://nyacchan.qzz.io/life/music/index.html</loc>
+    <loc>https://nyacchan.qzz.io/social/link/index.html</loc>
+    
+    <lastmod>2026-10-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://nyacchan.qzz.io/social/fcircle/index.html</loc>
     
     <lastmod>2026-10-27</lastmod>
     
@@ -75,6 +75,15 @@
   
   <url>
     <loc>https://nyacchan.qzz.io/box/nav/index.html</loc>
+    
+    <lastmod>2026-10-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://nyacchan.qzz.io/box/gallery/index.html</loc>
     
     <lastmod>2026-10-27</lastmod>
     
@@ -93,15 +102,6 @@
   
   <url>
     <loc>https://nyacchan.qzz.io/box/astronomy/index.html</loc>
-    
-    <lastmod>2026-10-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://nyacchan.qzz.io/box/gallery/index.html</loc>
     
     <lastmod>2026-10-27</lastmod>
     
