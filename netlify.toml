@@ -1,0 +1,51 @@
+# Netlify 部署配置（第三条线路）
+# 与 Cloudflare Pages / GitHub Pages 并存，不改动现有任何一条线。
+#
+# 主域名仍是 https://nyacchan.qzz.io/（站点 url 未变），
+# 所以用 netlify.app 域名访问时，站内绝对链接会指回主域名，这是预期行为。
+#
+# 2026-11-06：因 CF 线路本地实测 TTFB 0.9~4.3s、有超时与断流，
+# 增加本线路作为更快的备用入口。
+
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[build.environment]
+  # 与 .github/workflows/deploy.yml 保持一致用 22：
+  # 本地开发是 Node 24 / npm 11，lockfileVersion 2 在 npm 10 下装脚本策略更严，22 最稳。
+  # （2026-10-14 曾在 CF 因 npm 版本差异触发过 npm ci 失败）
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--no-audit --no-fund"
+
+# 站点级安全头
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# 静态资源缓存策略
+# 注意：Hexo 产物文件名不带内容指纹，改用 ?v= 查询参数做版本控制。
+# 所以这里不能给 immutable 长缓存，否则换样式/头像后访客看不到更新。
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+# HTML 不缓存，保证每次拿到最新页面骨架
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

@@ -59,13 +59,20 @@
     a.github-badge(target='_blank' href="https://github.com/fomalhaut1998/hexo-theme-fomalhaut" style='margin-inline:5px' title="主题Fomalhaut v1.0.4(基于Butterfly v4.3.1)")
       img(src="/assets/badge/Theme-Fomalhaut-6513df.svg" alt='')
 
-    //- 托管线路（2026-10-14 更新）：主线路 Cloudflare Pages，备份线路 GitHub Pages。
-    //- 原来挂的是 Hosted-Vercel，早已不实，换成两枚自托管 SVG（配色见 source/assets/badge/）。
-    a.github-badge(target='_blank' href="https://nyacchan.qzz.io/" style='margin-inline:5px' title="主线路：nyacchan.qzz.io，由 Cloudflare Pages 托管")
-      img(src="/assets/badge/Hosted-Cloudflare.svg" alt='')
+    //- 托管线路（2026-11-06 更新）：主线路 Netlify，备份线路 GitHub Pages。
+    //- 换主线的原因：本地实测 Cloudflare 线路 TTFB 0.9~4.3s，且出现过超时与断流；
+    //- 同机测 Netlify 传 410KB 仅 0.42s，差一个量级。
+    //- 配色与图形见 source/assets/badge/，三枚都是自托管 SVG，不外链 shields.io。
+    a.github-badge(target='_blank' href="https://nyacchan.qzz.io/" style='margin-inline:5px' title="主线路：nyacchan.qzz.io，由 Netlify 托管")
+      img(src="/assets/badge/Hosted-Netlify.svg" alt='')
 
     a.github-badge(target='_blank' href="https://nyacchan.github.io/nyacchan-hexo-blog/" style='margin-inline:5px' title="备份线路：GitHub Pages，同一份源码自动构建")
       img(src="/assets/badge/Hosted-GitHubPages.svg" alt='')
+
+    //- Cloudflare Pages 线路（2026-11-06 起不再承载主域名，徽章先撤下）。
+    //- 想恢复：把下面两行放开，并把 Hosted-Netlify 那枚的 title 改回备用说明。
+    //- a.github-badge(target='_blank' href="https://nyacchan.qzz.io/" style='margin-inline:5px' title="备用线路：Cloudflare Pages 托管")
+    //-   img(src="/assets/badge/Hosted-Cloudflare.svg" alt='')
 
     //- 51la 统计已关（2026-10-14），徽章一并撤下，免得挂着没在用的统计。
     //- 想恢复：重新启用 source/js/51la.js 与 inject.bottom 的三行脚本后，把下面两行放开。
@@ -78,7 +85,7 @@
       //- 源站上这枚已去掉 shields.io 模板自带的 1px 深色阴影文字（浅底深字会显重影），别换回 -fff2cc 那版
       img(src="/assets/badge/CDN-npmmirror.svg" alt='')
 
-    a.github-badge(target='_blank' href="https://github.com/" style='margin-inline:5px' title="本网站源码由Github提供存储仓库")
+    a.github-badge(target='_blank' href="https://github.com/Nyacchan/nyacchan-hexo-blog" style='margin-inline:5px' title="本站源码仓库：Nyacchan/nyacchan-hexo-blog")
       img(src="https://img.shields.io/badge/Source-GitHub-d021d6.svg" alt='')
 
     //- a.github-badge(target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style='margin-inline:5px' title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可")

@@ -1,35 +1,111 @@
-# 双线路部署说明（Cloudflare Pages + GitHub Pages）
+# 三线路部署说明（Netlify + Cloudflare Pages + GitHub Pages）
 
-同一份源码（`main` 分支）同时发布到两条线路，任一域名都能访问：
+同一份源码（`main` 分支）同时发布到三条线路，任一域名都能访问：
 
 | 线路 | 域名 | 构建方 | 角色 |
 |---|---|---|---|
-| 主线路 | `nyacchan.qzz.io` | Cloudflare Pages（自动构建） | 日常访问 |
-| 备份线路 | `nyacchan.github.io` | GitHub Actions → `gh-pages` 分支 | 兜底 |
+| 主线路 | `nyacchan.qzz.io` | Netlify（自动构建） | 日常访问 |
+| 备用线路 | `nyacchan.github.io/nyacchan-hexo-blog/` | GitHub Actions → `gh-pages` 分支 | 兜底 |
+| 旧主线 | `nyacchan.qzz.io` | Cloudflare Pages | 2026-11-06 起让位，配置保留 |
 
-两条线路内容完全一致，都从 `main` 分支构建。站内跳转已由
+三条线路内容完全一致，都从 `main` 分支构建。站内跳转已由
 `source/js/inject/pc-local-link.js` 按 `location.origin` 本地化，
 所以在 gh.io 上访问时链接不会被带回主域名。
 
+## 为什么把主线从 Cloudflare 换到 Netlify（2026-11-06）
+
+本地实测同一台机器、同一时间段：
+
+| 线路 | TTFB | 完整下载 | 测试页大小 |
+|---|---|---|---|
+| Cloudflare | 0.94 ~ 4.33 s | 2.75 ~ 15 s | 51.7 KB |
+| Netlify | 0.23 s | 0.42 s | 410 KB |
+| GitHub Pages | 0.51 ~ 0.80 s | 0.67 ~ 0.98 s | 51.6 KB |
+
+Cloudflare 那条传八分之一的内容花了十倍时间，5 次采样里还有 1 次超时、1 次断流（只收到一半字节）。
+Netlify 传 410KB 只要 0.42 秒。差距不是一点，是一个量级。
+
+顺带测出一个隐藏问题：本地网络到 IPv6 出口完全不通（Cloudflare、Netlify 都返回 0 字节），
+浏览器会先试 IPv6、等超时才回落 IPv4，这会让每次访问白等一轮。这个问题跟换哪家托管无关。
+
 ---
 
-## 当前进度（2026-10-14）
+## 当前进度（2026-11-06）
 
 | 步骤 | 状态 |
 |---|---|
-| 源码仓库 `Nyacchan/hexo-blog` | ✅ 已建并推送 |
-| GitHub Actions 工作流 | ✅ 已跑通（run #2 success） |
-| `gh-pages` 分支 | ✅ 已生成 |
-| `package.json` 的 `build` 脚本 | ✅ 已含 gulp 压缩 |
-| GitHub Pages 开关 | ⬜ **待开启**（Settings → Pages） |
-| Cloudflare Pages 项目 | ⬜ **待创建**（注意框架预设选 Hexo） |
-| `nyacchan.qzz.io` DNS | ⬜ **待绑定自定义域** |
-
-**剩下三步都需要在网页上操作**，见下面两节。
+| 源码仓库 `Nyacchan/nyacchan-hexo-blog` | ✅ 已建并推送 |
+| `netlify.toml` | ✅ 已写好（Node 22 / `npm run build` / `public`） |
+| 页脚 Netlify 徽章 | ✅ 已加，标为主线 |
+| GitHub Actions 工作流 | ✅ 已跑通，产物发 `gh-pages` |
+| Netlify 项目 | ⬜ **待创建**（见下面第一节） |
+| `nyacchan.qzz.io` 指向 Netlify | ⬜ **待改 DNS** |
 
 ---
 
-## 一、GitHub Pages（备份线路）
+## 一、Netlify（主线路）
+
+### 1. 导入仓库
+
+1. 打开 <https://app.netlify.com/>，用 GitHub 账号登录
+2. `Add new site` → `Import an existing project`
+3. 选 `Nyacchan/nyacchan-hexo-blog`
+
+构建配置**不用手填**，仓库根目录的 `netlify.toml` 已经写好了：
+
+```toml
+[build]
+  command = "npm run build"
+  publish = "public"
+[build.environment]
+  NODE_VERSION = "22"
+```
+
+点 Deploy 就行。构建完整跑一遍约 1~3 分钟。
+
+### 2. 先验 netlify.app 域名
+
+部署完会拿到类似 `xxx-yyy-123.netlify.app` 的地址。**先在这个地址上验**：
+首页能开、样式正常、文章在、页脚三枚徽章都在。
+
+⚠️ 注意：站点 `url` 配的是 `https://nyacchan.qzz.io/`，所以用 netlify.app 访问时，
+站内绝对链接（sitemap、canonical、og:url）会指回主域名。这是预期行为，不是 bug。
+
+### 3. 绑定自定义域
+
+验完没问题，再走这一步：
+
+1. Netlify 项目 → `Domain management` → `Add a domain`
+2. 填 `nyacchan.qzz.io`
+3. 它会要求验证所有权，一般给一条 TXT 记录
+
+### 4. 改 DNS 让主域名指过来
+
+`qzz.io` 的 NS 在 Cloudflare，所以要去 **Cloudflare 的 DNS 面板**改：
+
+1. 把原来指向 CF Pages 的 `nyacchan` CNAME 删掉或改掉
+2. 新增 CNAME：`nyacchan` → 你的 Netlify 站点域名（`xxx.netlify.app`）
+3. **关掉橙色云朵**（改成灰云 / DNS only）。开着代理会跟 Netlify 的自动证书打架
+
+改完等 DNS 生效（通常几分钟，最长几小时）。Netlify 会自动签发 Let's Encrypt 证书。
+
+### 5. 回填确认
+
+域名切完，回 Netlify 看 `Domain management` 里证书状态变成 `Netlify managed certificate` 就对了。
+这时页脚那枚 Netlify 徽章的链接才是名副其实的。
+
+---
+
+## 二、Cloudflare Pages（旧主线，现备用）
+
+配置全部保留在仓库里，域名一旦切走，它就只作为一条不对外的主线存在。
+想恢复成主线，把 DNS 的 CNAME 改回去、把橙色云朵打开即可。
+
+下面这节记录当时建项目的步骤，留档用。
+
+---
+
+## 三、GitHub Pages（备份线路）
 
 ### 开启 Pages
 1. 打开 <https://github.com/Nyacchan/hexo-blog/settings/pages>
