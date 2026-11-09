@@ -13,6 +13,7 @@ menu:
     画廊: /box/gallery/ || icon-tubiaozhizuomoban || faa-tada
     天文馆: /box/astronomy/ || icon-wangyuanjing || faa-tada
     网址导航: /box/nav/ || icon-zhifengche || faa-tada
+  友人帐: /social/link/ || icon-lianjie || faa-tada
   网站 || icon-wangye || faa-tada || hide:
     网站统计: /site/census/ || icon--tongjibiao || faa-tada
     关于: /personal/about/ || icon-paperplane || faa-tada

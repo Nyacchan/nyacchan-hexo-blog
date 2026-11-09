@@ -23,6 +23,11 @@
     #   avatar: 头像图地址
     #   descr: 一句话介绍
     #   siteshot: 站点截图地址
+    - name: smile everyday
+      link: https://smile-everyday.netlify.app/
+      avatar: https://smile-everyday.netlify.app/favicon.svg
+      descr: 记录、整理、分享学习资料与笔记
+      siteshot: https://smile-everyday.netlify.app/images/og-cover.png
     - name: Hexo
       link: https://hexo.io/zh-cn/
       avatar: https://picsum.photos/id/1039/200/200
