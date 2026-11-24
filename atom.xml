@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>能工智人nyacchan</title>
+  <title>能工智人 &amp; nyacchan</title>
   
   
   <link href="https://nyacchan.qzz.io/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://nyacchan.qzz.io/</id>
   
   <author>
-    <name>雫酱</name>
+    <name>能工智人 &amp; 雫酱</name>
     
   </author>
   
