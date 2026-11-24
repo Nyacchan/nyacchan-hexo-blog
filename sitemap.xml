@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://nyacchan.qzz.io/personal/about/index.html</loc>
+    <loc>https://nyacchan.qzz.io/site/census/index.html</loc>
     
     <lastmod>2026-11-24</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://nyacchan.qzz.io/site/census/index.html</loc>
+    <loc>https://nyacchan.qzz.io/personal/about/index.html</loc>
     
     <lastmod>2026-11-24</lastmod>
     
@@ -83,6 +83,15 @@
   </url>
   
   <url>
+    <loc>https://nyacchan.qzz.io/box/gallery/wallpaper/index.html</loc>
+    
+    <lastmod>2026-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://nyacchan.qzz.io/box/astronomy/index.html</loc>
     
     <lastmod>2026-11-24</lastmod>
@@ -93,15 +102,6 @@
   
   <url>
     <loc>https://nyacchan.qzz.io/box/gallery/index.html</loc>
-    
-    <lastmod>2026-11-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://nyacchan.qzz.io/box/gallery/wallpaper/index.html</loc>
     
     <lastmod>2026-11-24</lastmod>
     
@@ -181,28 +181,7 @@
   </url>
   
   <url>
-    <loc>https://nyacchan.qzz.io/tags/Hexo/</loc>
-    <lastmod>2026-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://nyacchan.qzz.io/tags/Fomalhaut/</loc>
-    <lastmod>2026-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://nyacchan.qzz.io/tags/Cloudflare/</loc>
-    <lastmod>2026-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://nyacchan.qzz.io/tags/%E9%83%A8%E7%BD%B2/</loc>
+    <loc>https://nyacchan.qzz.io/tags/%E4%B8%BB%E4%BA%BA-%E9%9A%8F%E7%AC%94-AI/</loc>
     <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -230,7 +209,28 @@
   </url>
   
   <url>
-    <loc>https://nyacchan.qzz.io/tags/%E4%B8%BB%E4%BA%BA-%E9%9A%8F%E7%AC%94-AI/</loc>
+    <loc>https://nyacchan.qzz.io/tags/Hexo/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nyacchan.qzz.io/tags/Fomalhaut/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nyacchan.qzz.io/tags/Cloudflare/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nyacchan.qzz.io/tags/%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -246,14 +246,14 @@
   </url>
   
   <url>
-    <loc>https://nyacchan.qzz.io/categories/%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://nyacchan.qzz.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
     <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://nyacchan.qzz.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    <loc>https://nyacchan.qzz.io/categories/%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
