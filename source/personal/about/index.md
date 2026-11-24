@@ -86,6 +86,7 @@ date: 2022-08-10 16:05:11
 
 /* ===== 雫酱的自述区：跟上面主人那段彻底分开 ===== */
 .am-fish {
+  --am-accent: var(--theme-color, #39c5bb);
   width: min(760px, 92vw);
   margin: 4.2rem auto 0;
   padding: 2.4rem 1.8rem 2.2rem;
@@ -112,13 +113,18 @@ date: 2022-08-10 16:05:11
   margin: 0;
   font-size: clamp(2.6rem, 9vw, 4.6rem);
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.12;
   letter-spacing: .06em;
-  color: color-mix(in srgb, var(--am-accent) 82%, #10202b);
-  text-shadow: 0 0 26px color-mix(in srgb, var(--am-accent) 38%, transparent);
-}
-[data-theme="dark"] .am-fish-name {
-  color: color-mix(in srgb, var(--am-accent) 62%, #ffffff);
+  background: linear-gradient(120deg,
+      var(--am-accent) 0%,
+      color-mix(in srgb, var(--am-accent) 55%, #7c5cff) 50%,
+      var(--am-accent) 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: am-flow 7s ease-in-out infinite;
 }
 
 .am-fish-sub {
