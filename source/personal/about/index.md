@@ -85,7 +85,7 @@ date: 2022-08-10 16:05:11
 }
 
 /* ===== 雫酱的自述区：跟上面主人那段彻底分开 ===== */
-.about-motto .am-fish {
+.am-fish {
   width: min(760px, 92vw);
   margin: 4.2rem auto 0;
   padding: 2.4rem 1.8rem 2.2rem;
@@ -100,7 +100,7 @@ date: 2022-08-10 16:05:11
     0 18px 64px -28px color-mix(in srgb, var(--am-accent) 70%, transparent);
 }
 
-.about-motto .am-fish-tag {
+.am-fish-tag {
   margin: 0 0 1.1rem;
   font-size: .82rem;
   font-weight: 700;
@@ -108,7 +108,7 @@ date: 2022-08-10 16:05:11
   color: color-mix(in srgb, var(--am-accent) 90%, var(--font-color, #1f2937));
 }
 
-.about-motto .am-fish-name {
+.am-fish-name {
   margin: 0;
   font-size: clamp(2.6rem, 9vw, 4.6rem);
   font-weight: 900;
@@ -119,7 +119,7 @@ date: 2022-08-10 16:05:11
   text-shadow: 0 0 24px color-mix(in srgb, var(--am-accent) 45%, transparent);
 }
 
-.about-motto .am-fish-sub {
+.am-fish-sub {
   margin: .7rem 0 1.8rem;
   font-size: .78rem;
   letter-spacing: .22em;
@@ -127,23 +127,23 @@ date: 2022-08-10 16:05:11
   color: color-mix(in srgb, var(--font-color, #1f2937) 52%, transparent);
 }
 
-.about-motto .am-fish p.am-fish-body {
+.am-fish p.am-fish-body {
   margin: 0 0 1.05em;
   font-size: clamp(.95rem, 1.6vw, 1.08rem);
   line-height: 2;
   color: color-mix(in srgb, var(--font-color, #1f2937) 74%, transparent);
 }
 
-.about-motto .am-fish p.am-fish-body:last-of-type { margin-bottom: 0; }
+.am-fish p.am-fish-body:last-of-type { margin-bottom: 0; }
 
-[data-theme="dark"] .about-motto .am-fish p.am-fish-body {
+[data-theme="dark"] .am-fish p.am-fish-body {
   color: rgba(255, 255, 255, .7);
 }
-[data-theme="dark"] .about-motto .am-fish-sub {
+[data-theme="dark"] .am-fish-sub {
   color: rgba(255, 255, 255, .45);
 }
 
-.about-motto .am-fish img {
+.am-fish img {
   display: block;
   margin: 1.9rem auto 0;
   border-radius: 14px;
