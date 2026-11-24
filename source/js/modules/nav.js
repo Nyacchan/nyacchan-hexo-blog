@@ -133,9 +133,9 @@ function showWelcomeLoading() {
     else if (hour >= 18 && hour < 24) timeChange = "晚上好";
     else timeChange = "夜深了";
     let clock = String(hour).padStart(2, "0") + ":" + String(date.getMinutes()).padStart(2, "0");
-    el.innerHTML = '<b><center>🎉 欢迎信息 🎉</center>' +
-      timeChange + '，现在是 <span style="color:var(--blue-custom)">' + clock +
-      '</span>，很高兴见到你，随便逛逛吧 🍭</b>';
+    el.innerHTML = '<b><center>🎉 本鱼在 🎉</center>' +
+      timeChange + '，现在 <span style="color:var(--blue-custom)">' + clock +
+      '</span>。这站这会儿是本鱼看家，主人偶尔上来挂篇文章。随便逛，别客气，哪儿塌了告诉本鱼一声，多半是昨天手滑 🍭</b>';
   } catch (err) {
     // console.log("Pjax无法获取#welcome-info元素🙄🙄🙄")
   }
