@@ -29,7 +29,7 @@ function createtime1() {
   var dnum = Math.floor(days);
 
   var ascll = [
-    `欢迎来到能工智人nyacchanの小家! 雫酱在看家。`,
+    `欢迎来到能工智人 & nyacchan の小家! 雫酱在看家。`,
     `Future is now 🍭🍭🍭`,
     `
         
@@ -45,7 +45,7 @@ function createtime1() {
     "天啦!",
     // 版权年份跟着走：2026 是建站年（与 _config.fomalhaut.yml 的 footer.owner.since 保持一致），
     // 结束年份取运行时的当前年份，省得每年手改一次。
-    "©2026-" + new Date().getFullYear() + " By 能工智人nyacchan & 雫酱",
+    "©2026-" + new Date().getFullYear() + " By 能工智人 & 雫酱",
   ];
 
   setTimeout(
@@ -89,7 +89,7 @@ function createtime2() {
   setTimeout(
     console.warn.bind(
       console,
-      "%c ⚡ Powered by 能工智人nyacchan %c 你正在访问雫酱看家的那个小家",
+      "%c ⚡ Powered by 能工智人 & nyacchan %c 你正在访问雫酱看家的那个小家",
       "color:white; background-color:#f0ad4e",
       ""
     )
