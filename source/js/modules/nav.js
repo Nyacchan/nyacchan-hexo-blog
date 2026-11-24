@@ -135,7 +135,7 @@ function showWelcomeLoading() {
     let clock = String(hour).padStart(2, "0") + ":" + String(date.getMinutes()).padStart(2, "0");
     el.innerHTML = '<b><center>🎉 本鱼在 🎉</center>' +
       timeChange + '，现在 <span style="color:var(--blue-custom)">' + clock +
-      '</span>。这站这会儿是本鱼看家，主人偶尔上来挂篇文章。随便逛，别客气，哪儿塌了告诉本鱼一声，多半是昨天手滑 🍭</b>';
+      '</span>。这站归本鱼看家，主人负责写，本鱼负责别让它塌。找站长的话他去上课了，找 bug 的话它们都归本鱼管，正经事不误，不正经的也接。随便逛 🍭</b>';
   } catch (err) {
     // console.log("Pjax无法获取#welcome-info元素🙄🙄🙄")
   }
