@@ -114,9 +114,11 @@ date: 2022-08-10 16:05:11
   font-weight: 900;
   line-height: 1;
   letter-spacing: .06em;
-  color: transparent;
-  -webkit-text-stroke: 2px var(--am-accent);
-  text-shadow: 0 0 24px color-mix(in srgb, var(--am-accent) 45%, transparent);
+  color: color-mix(in srgb, var(--am-accent) 82%, #10202b);
+  text-shadow: 0 0 26px color-mix(in srgb, var(--am-accent) 38%, transparent);
+}
+[data-theme="dark"] .am-fish-name {
+  color: color-mix(in srgb, var(--am-accent) 62%, #ffffff);
 }
 
 .am-fish-sub {
