@@ -31,3 +31,6 @@ cdn-check/
 _imgtmp/
 # 部署配置的本地备份
 _bak-deploy-notes/
+
+# ===== 2026-11-24 追加：本鱼的站点改动备份，不进仓库 =====
+_bak-takeover-*/
