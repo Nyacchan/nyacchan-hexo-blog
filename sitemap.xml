@@ -225,6 +225,20 @@
   </url>
   
   <url>
+    <loc>https://nyacchan.qzz.io/tags/%E4%B8%BB%E4%BA%BA/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nyacchan.qzz.io/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://nyacchan.qzz.io/tags/%E8%AE%B0%E5%BF%86/</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -233,13 +247,6 @@
   
   <url>
     <loc>https://nyacchan.qzz.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://nyacchan.qzz.io/tags/%E4%B8%BB%E4%BA%BA-%E9%9A%8F%E7%AC%94-AI/</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
